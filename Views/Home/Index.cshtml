@@ -1,0 +1,232 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "SIGMA | Inventario";   
+}
+
+
+<!-- Contenedor -->
+<div class="col-lg-10">
+    <div class="tableInventaryPage text-center">
+        <table id="table_id" class="table table-sm">
+            <thead class="table-dark">
+                <tr>
+                    <th>Acciones</th>
+                    <th>Digitalizado</th>
+                    <th>IDCM</th>
+                    <th>Codigo CM CLiente</th>
+                    <th>Calle</th>
+                    <th>Num</th>
+                    <th>Situacion</th>
+                    <th>Tipo Gobierno</th>
+                    <th>Tipo Caja</th>
+                    <th>Potencia</th>
+                    <th>16 Ent/ Sal</th>
+                    <th>Fecha Alta</th>
+                    <th>Fecha Baja</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    List<Inventario> inventarios = new List<Inventario>();
+                }
+                @foreach (var row in ViewBag.results)
+                {
+                    
+                    Inventario inventario = new Inventario();
+                    inventario.IDCM = @row["IDCM"];
+                    inventario.cod_CM_Cliente = @row["cod_CM_Cliente"];
+                    inventario.CalleCM = @row["calleCM"];
+                    inventario.NumCM = @row["numCM"];
+                    inventario.Situacion = @row["situacion"];
+                    inventario.IDTipoGobierno = @row["IDTipoGobierno"];
+                    inventario.IDTipoCaja = @row["IDTipoCaja"];
+                    inventario.PotenciaCM = @row["potenciaCM"];
+                    inventario.FechaAltaCM = @row["fechaAltaCM"];
+                    inventario.FechaBajaCM = @row["fechaBajaCM"];
+                    inventarios.Add(inventario);
+                    
+                <tr>
+                    <td class="acciones">
+                        <a href="detallesCM.html" class="text-dark" title="Ver detalles CM"><i class="fas fa-external-link-square-alt text-dark"></i></a>
+                        <a class="text-primary editCmModal" data-id="@row["IDCM"]" data-toggle="modal"  data-target="#modalEditarCM"><i class="fas fa-edit text-primary"></i></a>
+                        <a class="text-danger deleteCmModal" data-toggle="modal" data-id="@row["IDCM"]" data-target="#modalBorrarCM"><i class="fas fa-trash-alt text-danger"></i></a>
+                    </td>
+                    <td>@row["Digitalizado"]</td>
+                    <td>@row["IDCM"]</td>
+                    <td>@row["cod_CM_Cliente"]</td>
+                    <td>@row["calleCM"]</td>
+                    <td>@row["numCM"]</td>
+                    <td>@row["situacion"]</td>
+                    <td>@row["IDTipoGobierno"]</td>
+                    <td>@row["IDTipoCaja"]</td>
+                    <td>@row["potenciaCM"]</td>
+                    <td>@row["entSal16"]</td>
+                    <td>@row["fechaAltaCM"]</td>
+                    <td>@row["fechaBajaCM"]</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+        
+
+<!-- Modal nuevo CM -->
+<div class="modal fade" id="modalNuevoCM" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-light">
+                <h2 class="text-center">Crear nuevo CM</h2>
+            </div>
+            <div class="modal-body">
+                <form asp-action="CreateCM" class="form-group">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label for="IDCM">IDCM</label>
+                            <input class="form-control form-control-sm" id="IDCM" type="text" name="IDCM" placeholder="Ej: CMD01" required>
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="cod_CM_Cliente">Codigo CM Cliente</label>
+                            <input class="form-control form-control-sm" type="text" id="cod_CM_Cliente" name="cod_CM_Cliente" placeholder="Ej: C1">
+                        </div>
+                    </div>
+                    <diV>
+                        <label for="calleCM">Calle</label>
+                        <input class="form-control form-control-sm" type="text" id="calleCM" name="calleCM" placeholder="Ej: Calle pirámides">
+                    </diV>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label for="numCM">Número</label>
+                            <input class="form-control form-control-sm" id="numCM" name="numCM" type="text" placeholder="Ej: 5">
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="situacion">Situación</label>
+                            <input class="form-control form-control-sm" id="situacion" name="situacion" type="text" placeholder="Ej: ACERA">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label for="IDTipoGobierno">Tipo Gobierno</label>
+                            <input class="form-control form-control-sm" id="IDTipoGobierno" name="IDTipoGobierno" type="text" placeholder="Ej: Equipo telegestion">
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="IDTipoCaja">Tipo Caja</label>
+                            <input class="form-control form-control-sm" id="IDTipoCaja" name="IDTipoCaja" type="text" placeholder="Ej: Fibra acera">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="potenciaCM">Potencia</label>
+                        <input class="form-control form-control-sm" id="potenciaCM" name="potenciaCM" type="text" placeholder="Ej: 26,050">
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label for="fechaAltaCM">Fecha Alta</label>
+                            <input type="date" id="fechaAltaCM" name="fechaAltaCM" class="form-control form-control-sm" required>
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="fechaBajaCM">Fecha Baja</label>
+                            <input type="date" id="fechaBajaCM" name="fechaBajaCM" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                    <div class="mt-lg-2 text-center">
+                        <button class="btn btn-success" type="submit"><i class="fas fa-save"></i></button>
+                        <a class="btn btn-dark text-light" data-dismiss="modal" aria-label="Close"><i class="fas fa-times-circle"></i></a>
+                    </div>
+                </form>                    
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal editar CM -->
+<div class="modal fade" id="modalEditarCM" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-light">
+                <h2 class="text-center" id="titleEditCm"></h2>
+            </div>
+            <div class="modal-body">
+               <form asp-action="EditCm" id="editForm" class="form-group">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label for="idcmUpdate">IDCM</label>
+                            <input class="form-control form-control-sm" id="idcmUpdate" type="text" name="IDCM" placeholder="Ej: CMD01" required>
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="cod_CM_ClienteUpdate">Codigo CM Cliente</label>
+                            <input class="form-control form-control-sm" type="text" id="cod_CM_ClienteUpdate" name="cod_CM_Cliente" placeholder="Ej: C1">
+                        </div>
+                    </div>
+                    <diV>
+                        <label for="calleCMUpdate">Calle</label>
+                        <input class="form-control form-control-sm" type="text" id="calleCMUpdate" name="calleCM" placeholder="Ej: Calle pirámides">
+                    </diV>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label for="numCMUpdate">Número</label>
+                            <input class="form-control form-control-sm" id="numCMUpdate" name="numCM" type="text" placeholder="Ej: 5">
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="situacionUpdate">Situación</label>
+                            <input class="form-control form-control-sm" id="situacionUpdate" name="situacion" type="text" placeholder="Ej: ACERA">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label for="IDTipoGobiernoUpdate">Tipo Gobierno</label>
+                            <input class="form-control form-control-sm" id="IDTipoGobiernoUpdate" name="IDTipoGobierno" type="text" placeholder="Ej: Equipo telegestion">
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="IDTipoCajaUpdate">Tipo Caja</label>
+                            <input class="form-control form-control-sm" id="IDTipoCajaUpdate" name="IDTipoCaja" type="text" placeholder="Ej: Fibra acera">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="potenciaCMUpdate">Potencia</label>
+                        <input class="form-control form-control-sm" id="potenciaCMUpdate" name="potenciaCM" type="text" placeholder="Ej: 26,050">
+                    </div>
+                   <div class="row">
+                       <div class="col-lg-6">
+                           <label for="fechaAltaCmUpdate">Fecha Alta</label>
+                           <input type="date" id="fechaAltaCmUpdate" name="fechaAltaCM" class="form-control form-control-sm" required>
+                       </div>
+                       <div class="col-lg-6">
+                           <label for="fechaBajaCmUpdate">Fecha Baja</label>
+                           <input type="date" id="fechaBajaCmUpdate" name="fechaBajaCM" class="form-control form-control-sm">
+                       </div>
+                       <input name="idcmOri" id="idcmOriUpdate" hidden="true"/>
+                   </div>
+                   <div class="mt-lg-2 text-center">
+                       <button class="btn btn-success" type="submit"><i class="fas fa-save"></i></button>
+                       <a class="btn btn-dark text-light" data-dismiss="modal" aria-label="Close"><i class="fas fa-times-circle"></i></a>
+                   </div>
+               </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Borrar CM -->
+<div class="modal fade" id="modalBorrarCM" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog text-center" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-light">
+                <h2 class="text-center" id="titleDeleteCm">Eliminar CM: </h2>
+            </div>
+            <div class="modal-body">
+                <p><strong>¿Quiere eliminar el CM?</strong></p>
+                <form asp-action="DeleteCm">
+                    <input id="idcmDelete" name="IDCM"/>
+                    <button class="btn btn-danger"  type="submit">Si</button>
+                    <button class="btn btn-dark" data-dismiss="modal" aria-label="Close">Cancelar operación</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var inventarios = @Html.Raw(Json.Serialize(inventarios));
+    var inventariosJSON = JSON.parse(JSON.stringify(inventarios));
+</script>
+
+

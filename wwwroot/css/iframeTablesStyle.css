@@ -1,0 +1,30 @@
+.tableInventaryPage {
+    font-size: 15px;
+    padding: 1% 2% 2% 2%;
+}
+
+.tableInventaryPage label,
+.dataTables_info {
+    color: #0D237D;
+    font-weight: bold;
+}
+
+.dataTables_length {
+    text-align: initial;
+}
+
+#table_id tbody td button {
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: 0;
+}
+
+#table_id tbody td a {
+    padding: 0;
+    margin: 1px;
+}
+
+.acciones i {
+    font-size: 20px;
+}

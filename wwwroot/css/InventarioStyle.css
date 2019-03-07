@@ -1,0 +1,203 @@
+body {
+    background-image: linear-gradient(to bottom, white, lightgrey);
+}
+
+header {
+    margin-top: 1%;
+    padding-bottom: 1%;
+    border-bottom: 5px solid #0D237D;
+    margin-bottom: 0.5%;
+}
+
+.headerTitleInventaryPage {
+    margin-top: 0.5%;
+    color: #0D237D;
+}
+
+.buttonControlPanel {
+    background: #0D237D;
+    color: white;
+    margin: 3px;
+}
+
+.panelObra {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonControlPanel:hover {
+    background: white;
+    color: #0D237D;
+    transition: 0.3s;
+    border: 1px solid #0D237D;
+}
+
+.headerTitleInventaryPage h1 {
+    font-size: 35px;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo img {
+    width: 75%;
+    max-width: 500px;
+}
+
+.row {
+    margin-right: 0;
+}
+
+.headerUserInventaryPage {
+    color: white;
+    font-size: 15px;
+    background-color: #11B75E;
+}
+
+.headerUserInventaryPage button {
+    background: #0D237D;
+    color: white;
+    font-size: 1em;
+}
+
+.headerUserInventaryPage button:hover {
+    color: #0D237D;
+    background-color: white;
+    -webkit-transition: background-color 0.6s, color 0.4s;
+}
+
+.quitarMargenTabla,
+header div:first-child {
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.sideNavInventaryPage strong {
+    font-size: 20px;
+    margin-left: -15px;
+}
+
+.active {
+    background: #11B75E;
+    color: white;
+    border-right: 5px solid #0D237D;
+}
+
+.active strong {
+    border-right: #0D237D;
+}
+
+.sideNavInventaryPage a {
+    color: #0D237D;
+    text-decoration: none;
+    line-height: 2em;
+}
+
+.sideNavInventaryPage {
+    padding-bottom: 10px;
+    border-bottom: 5px solid #0D237D;
+    font-size: 14px;
+}
+
+.sideNavGroupInventaryPage {
+    padding: 5px;
+}
+
+.sideNavGroupInventaryPage:hover:not(.active) {
+    color: white;
+    background-color: #0D237D;
+    -webkit-transition: background-color 0.6s, color 0.4s;
+}
+
+.icono {
+    text-align: right;
+    font-size: 25px;
+}
+
+footer {
+    background-color: #0D237D;
+    padding: 20px;
+    color: white;
+    font-size: 0.8em;
+    width: 100%;
+}
+
+footer a {
+    color: white;
+}
+
+footer a:hover {
+    text-decoration: none;
+    color: lightgray;
+}
+
+footer img {
+    width: 80%;
+}
+
+.paginasFooterLoginPage p {
+    margin-right: 1%;
+}
+
+.tableInventaryPage {
+    font-size: 12px;
+    padding: 1% 2% 2% 2%;
+}
+
+.tableInventaryPage label,
+.dataTables_info {
+    color: #0D237D;
+    font-weight: bold;
+}
+
+.dataTables_length {
+    text-align: initial;
+}
+
+#table_id tbody td button {
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: 0;
+}
+
+#table_id tbody td a {
+    padding: 0;
+    margin: 1px;
+}
+
+.acciones i {
+    font-size: 24px;
+}
+
+#modalEditarCM label {
+    font-weight: bold;
+}
+
+#idcmDelete {
+    display: none;
+}
+
+@media only screen and (max-width: 750px) {
+    .sideNavLoginPage {
+        display: none;
+    }
+    .centerNavLoginPage h1 {
+        font-size: 1.2em;
+    }
+    .centerNavLoginPage {
+        margin-top: 5%;
+    }
+    .contentThreeColums {
+        margin: 0;
+    }
+    footer {
+        display: none;
+    }
+}

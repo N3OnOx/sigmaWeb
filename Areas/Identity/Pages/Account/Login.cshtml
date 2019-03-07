@@ -1,0 +1,175 @@
+﻿@page
+@model LoginModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Acceso Usuario SIGMA | Sistema de control de Alumbrado | IMESAPI</title>
+    <link rel="icon" type="image/png" href="~/img/favicon.png">
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/loginStyle.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="logo"><img src="~/img/logoImesapiColor.png" /></div>
+        <div class="row contentThreeColums">
+            <div class="col-md-4 sideNavLoginPage">
+                <div class="text-center mainTitleSideNavLoginPage">
+                    <h1>GESTORÍA</h1>
+                </div>
+                <div class="descSideNavLoginPage">
+                    <p>
+                        <div class="row">
+                            <div class="col-lg-4 icono"><i class="fas fa-boxes"></i></div>
+                            <div class="col-lg-8"><strong>Inventario</strong></div>
+                        </div>
+                    </p>
+                    <p>
+                        <div class="row">
+                            <div class="col-lg-4 icono"><i class="fas fa-laptop"></i></div>
+                            <div class="col-lg-8"><strong>Telecontrol</strong></div>
+                        </div>
+                    </p>
+                    <p>
+                        <div class="row">
+                            <div class="col-lg-4 icono"><i class="fas fa-wrench"></i></div>
+                            <div class="col-lg-8"><strong>Mantenimiento</strong></div>
+                        </div>
+                    </p>
+                    <p>
+                        <div class="row">
+                            <div class="col-lg-4 icono"><i class="fas fa-sun"></i></div>
+                            <div class="col-lg-8"><strong>Gestor Energético</strong></div>
+                        </div>
+                    </p>
+                    <p>
+                        <div class="row">
+                            <div class="col-lg-4 icono"><i class="fas fa-newspaper"></i></div>
+                            <div class="col-lg-8"><strong>Informes</strong></div>
+                        </div>
+                    </p>
+                    <p>
+                        <div class="row">
+                            <div class="col-lg-4 icono"><i class="fas fa-file-invoice-dollar"></i></div>
+                            <div class="col-lg-8"><strong>Facturación</strong></div>
+                        </div>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4 centerNavLoginPage">
+                <h1>Sistema de Control de Alumbrado - <strong>SIGMA</strong></h1>
+                <div class="loginFormStyle">
+                    <h1>Acceso Usuarios</h1>
+                    <form role="form" method="post">
+                        <div class="form-group">
+                            <label asp-for="Input.Email">Email</label>
+                            <input asp-for="Input.Email" class="form-control" />
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.Password">Contraseña</label>
+                            <input asp-for="Input.Password" class="form-control" />
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-info btn-lg">Entrar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-4 sideNavLoginPage">
+                <div class="text-center mainTitleSideNavLoginPage">
+                    <h1>VISUALIZACIÓN</h1>
+                </div>
+                <div class="descSideNavLoginPage">
+                    <p>
+                        <div class="row">
+                            <div class="col-lg-4 icono"><i class="fas fa-database"></i></div>
+                            <div class="col-lg-8"><strong>Datos Generales</strong></div>
+                        </div>
+                    </p>
+                    <p>
+                        <div class="row">
+                            <div class="col-lg-4 icono"><i class="fas fa-exchange-alt"></i></div>
+                            <div class="col-lg-8"><strong>Importar/Exportar</strong></div>
+                        </div>
+                    </p>
+                    <p>
+                        <div class="row">
+                            <div class="col-lg-4 icono"><i class="fab fa-elementor"></i></div>
+                            <div class="col-lg-8"><strong>Elementos</strong></div>
+                        </div>
+                    </p>
+                    <p>
+                        <div class="row">
+                            <div class="col-lg-4 icono"><i class="fas fa-plus-circle"></i></div>
+                            <div class="col-lg-8"><strong>Marcas y tipos</strong></div>
+                        </div>
+                    </p>
+                    <p>
+                        <div class="row">
+                            <div class="col-lg-4 icono"><i class="fas fa-users-cog"></i></div>
+                            <div class="col-lg-8"><strong>Gestor usuarios</strong></div>
+                        </div>
+                    </p>
+                    <p>
+                        <div class="row">
+                            <div class="col-lg-4 icono"><i class="fas fa-eye"></i></div>
+                            <div class="col-lg-8"><strong>Visor GIS</strong></div>
+                        </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="row">
+                <div class="col-md-4">
+                    <img alt="Logo IMESAPI" src="~/img/logoImesapiBlanco.png">
+                </div>
+                <div class="col-md-8 mt-lg-3">
+                    <div class="row paginasFooterLoginPage">
+                        <div class="col-lg-4">
+                            <p><a href="http://www.imesapisistemas.com/"><strong>www.imesapisistemas.com</strong></a></p>
+                        </div>
+                        <div class="col-lg-4">
+                            <p><strong>&copy;IMESAPI S.A. Sistema de Control de Alumbrado SIGMA</strong></p>
+                        </div>
+                        <div class="col-lg-4">
+                            <p><a href="http://www.imesapi.es/"><strong>www.imesapi.es</strong></a></p>
+                        </div>
+                    </div>
+                    <div class="row politicasLoginPage">
+                        <div class="col-lg-2">
+                            <p><a href="http://sigma-system.info/Documentos/Aviso%20Legal.pdf"><strong>Aviso Legal</strong></a></p>
+                        </div>
+                        <div class="col-lg-7 ">
+                            <p><strong>El registro en esta plataforma implica la aceptación expresa y sin reservas de la política de privacidad.</strong></p>
+                        </div>
+                        <div class="col-lg-3 text-left">
+                            <p><a href="http://sigma-system.info/Documentos/Pol%C3%ADtica%20de%20Privacidad.pdf"><strong>Política de Privacidad</strong></a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+
+</html>

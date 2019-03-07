@@ -1,0 +1,197 @@
+body {
+    margin: 0;
+    background-image: linear-gradient(to bottom, white, lightgrey);
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.contentThreeColums {
+    margin-top: 5%;
+    margin-right: 0;
+}
+
+.mainTitleSideNavLoginPage {
+    color: #0D237D;
+    font-weight: bold;
+}
+
+.descSideNavLoginPage i {
+    color: #0D237D;
+    font-size: 36px;
+}
+
+.descSideNavLoginPage strong {
+    color: #11B75E;
+    font-size: 30px;
+    margin-left: 15px;
+}
+
+.icono {
+    text-align: right;
+}
+
+.descSideNavLoginPage {
+    margin-top: 15%;
+}
+
+.logo {
+    text-align: center;
+    margin-top: 2%;
+}
+
+.logo img {
+    width: 100%;
+    max-width: 600px;
+}
+
+.centerNavLoginPage {
+    height: 500px;
+}
+
+.centerNavLoginPage h1 {
+    text-align: center;
+    color: #0D237D;
+}
+
+.loginFormStyle {
+    background-color: #11B75E;
+    margin-top: 5%;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.loginFormStyle h1 {
+    color: white;
+}
+
+.loginFormStyle label {
+    font-weight: bold;
+    color: white;
+}
+
+.loginFormStyle button {
+    background-color: #0D237D;
+    color: white;
+}
+
+.loginFormStyle button:hover {
+    background-color: rgb(12, 17, 37);
+}
+
+footer {
+    background-color: #0D237D;
+    padding: 25px;
+    color: white;
+    font-size: 0.8em;
+}
+
+footer a {
+    color: white;
+}
+
+footer a:hover {
+    text-decoration: none;
+    color: lightgray;
+}
+
+footer img {
+    width: 45%;
+}
+
+@media only screen and (max-width: 750px) {
+    .sideNavLoginPage {
+        display: none;
+    }
+    .centerNavLoginPage h1 {
+        font-size: 1em;
+    }
+    .centerNavLoginPage {
+        margin-top: 5%;
+    }
+    .contentThreeColums {
+        margin: 0;
+    }
+    footer {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+    .politicasLoginPage {
+        display: none;
+    }
+    .paginasFooterLoginPage {
+        margin-top: 20px;
+    }
+    .logo {
+        padding: 20px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .sideNavLoginPage {
+        margin-top: 80px;
+        font-size: 10px;
+    }
+    .centerNavLoginPage h1 {
+        font-size: 1.5em;
+    }
+    .loginFormStyle {
+        font-size: 10px;
+    }
+    .centerNavLoginPage {
+        margin-top: 5%;
+    }
+    .contentThreeColums {
+        margin: 0;
+    }
+    footer {
+        background-color: #0D237D;
+        color: white;
+        font-size: 0.6em;
+    }
+    footer a {
+        color: white;
+    }
+    footer a:hover {
+        text-decoration: none;
+        color: lightgray;
+    }
+    footer img {
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 1440px) {
+    .sideNavLoginPage {
+        margin-top: 80px;
+    }
+    .centerNavLoginPage h1 {
+        font-size: 2em;
+    }
+    .loginFormStyle {
+        font-size: 15px;
+    }
+    .centerNavLoginPage {
+        margin-top: 5%;
+    }
+    .contentThreeColums {
+        margin: 0;
+    }
+    footer {
+        background-color: #0D237D;
+        color: white;
+        font-size: 0.6em;
+    }
+    footer a {
+        color: white;
+    }
+    footer a:hover {
+        text-decoration: none;
+        color: lightgray;
+    }
+    footer img {
+        width: 40%;
+    }
+}
